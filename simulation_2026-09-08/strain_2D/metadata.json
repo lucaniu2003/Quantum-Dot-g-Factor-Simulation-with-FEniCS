@@ -1,0 +1,27 @@
+{
+  "quantity": "strain",
+  "components": [
+    "yy-xx",
+    "xz",
+    "yz",
+    "xy",
+    "zz",
+    "yy+xx"
+  ],
+  "date": "2026-09-08T02:51:15",
+  "z_plane": 50.0,
+  "z_convention": "z = -z_mesh - 13 (Ge well: z=42 top edge, z=58 bottom edge)",
+  "x_range": [
+    -500.0,
+    500.0
+  ],
+  "y_range": [
+    -410.0,
+    590.0
+  ],
+  "grid_points_per_axis": 400,
+  "xy_shift": {
+    "shift_x": -1.25,
+    "shift_y": -108.05
+  }
+}

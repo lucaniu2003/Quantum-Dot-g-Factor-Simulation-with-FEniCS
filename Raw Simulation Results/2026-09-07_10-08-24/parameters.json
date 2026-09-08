@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-07T10:08:26",
+  "dolfinx_version": "0.11.0",
+  "mesh_files": {
+    "mesh": "rooney3d_medium.xdmf",
+    "subdomains": "rooney3d_medium_subdomains.xdmf",
+    "boundaries": "rooney3d_medium_boundaries.xdmf",
+    "grid_name": "Grid"
+  },
+  "num_cells": 727475,
+  "material_props": {
+    "298": {
+      "lam": 49.0,
+      "mu": 68.8,
+      "alpha": 7.6e-07
+    },
+    "296": {
+      "lam": 63.3,
+      "mu": 68.5,
+      "alpha": 3.3e-06
+    },
+    "295": {
+      "lam": 61.37,
+      "mu": 30.9,
+      "alpha": 1.416e-05
+    },
+    "297": {
+      "lam": 52.2,
+      "mu": 71.1,
+      "alpha": 4.37e-06
+    }
+  },
+  "thermal_bc": {
+    "temperature_K": 280.0,
+    "boundary_tags": [
+      299,
+      300
+    ]
+  },
+  "displacement_bc": {
+    "value": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "boundary_tags": [
+      299,
+      300
+    ]
+  },
+  "solver": {
+    "ksp_type": "cg",
+    "pc_type": "hypre",
+    "pc_hypre_boomeramg_nodal_coarsen": 6,
+    "pc_hypre_boomeramg_vec_interp_variant": 3
+  },
+  "displacement_space": {
+    "family": "Lagrange",
+    "degree": 2
+  },
+  "z_convention": "z = -z_mesh - 13 (Ge well: z=42 top edge, z=58 bottom edge)",
+  "xy_shift": {
+    "shift_x": -1.25,
+    "shift_y": -108.05
+  },
+  "grid_config": {
+    "X_RANGE": [
+      -500.0,
+      500.0
+    ],
+    "Y_RANGE": [
+      -410.0,
+      590.0
+    ],
+    "Z_PLANE": 47.0,
+    "GRID_2D": 1000,
+    "Z3_RANGE": [
+      42.0,
+      58.0
+    ],
+    "GRID_3D": [
+      300,
+      300,
+      30
+    ]
+  }
+}
