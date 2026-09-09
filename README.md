@@ -124,6 +124,36 @@ has a `metadata.json` describing grid, ranges, and conventions.
 - `strain_3D/` — the same six components on a 300×300×30 grid covering the Ge
   well (z = 42–58).
 
+> **Note: the 3D strain CSVs are not on GitHub.** Each `strain_*_3D.csv` file
+> is ~200 MB (six files, ~1.2 GB total), far above GitHub's 100 MB per-file
+> limit, so they must be regenerated locally. This is exactly reproducible —
+> see "Regenerating the 3D strain CSVs" below. The small files
+> (`metadata.json`, the 2D strain and displacement CSVs) are checked in.
+
+### Regenerating the 3D strain CSVs
+
+The 3D exports are a deterministic post-processing step: they are computed by
+sampling the solved displacement field on a fixed 300×300×30 grid. Everything
+needed to reproduce them bit-for-bit is stored in the much smaller raw run
+archives (~45 MB each) under `Raw Simulation Results/` — no re-solving of the
+PDE is required. To regenerate the current `simulation_2026-09-08/strain_3D/`
+files:
+
+1. Activate the environment: `conda activate fenicsx`.
+2. Open `Strain Simulation FEniCSx.ipynb` and set
+   `LOAD_RUN = "Raw Simulation Results/2026-09-07_10-08-24"` in the
+   configuration cell (this is the archived medium-mesh run that the current
+   dataset was exported from). When `LOAD_RUN` is set, the notebook loads the
+   mesh, `parameters.json`, and `displacement.npy` from that archive instead
+   of re-running the thermal/strain solves.
+3. Run the initialization and mesh-import cells, then skip the "Solving"
+   section and run the "Post-Processing" and "Generating Data Files" sections
+   (specifically "Extract 3D Strain Values (3D CSV exports)"). The resulting
+   CSVs are identical to the ones used for the figures in `graph/`.
+
+The same procedure works for any archived run — point `LOAD_RUN` at its folder
+to re-export its strain data at any grid resolution.
+
 ### `Raw Simulation Results/<timestamp>/` — archived raw runs
 
 One folder per FEniCSx run, each containing a copy of the mesh files used,
