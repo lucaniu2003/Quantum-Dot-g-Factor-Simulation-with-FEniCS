@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Quantum Dot g-Factor Simulation with FEniCS"
+authors:
+  - family-names: Niu
+    given-names: Mu
+  - family-names: Culver
+    given-names: Adrian
+  - family-names: Bryan
+    given-names: Johnathan
+  - family-names: Anderson
+    given-names: Chris
+  - family-names: Gyure
+    given-names: Mark
+  - family-names: Jiang
+    given-names: HongWen
+version: 1.0.0
+date-released: 2026-09-11
